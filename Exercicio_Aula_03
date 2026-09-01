@@ -1,0 +1,43 @@
+//import React from 'react';
+//import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      valor1: 10,
+      valor2:5,
+      resultado: 0
+    };
+  }
+
+  Soma() {
+    this.setState({ resultado: this.state.valor1 + this.state.valor2 }); 
+  }
+
+ Subtracao() {
+    this.setState({ resultado: this.state.valor1 - this.state.valor2 });
+  }
+  
+  Divisao() {
+    this.setState({ resultado: this.state.valor1 / this.state.valor2 });
+  }
+  
+  Multiplicacao() {
+    this.setState({ resultado: this.state.valor1 * this.state.valor2 });
+  }
+
+  render() {
+    return (
+     
+      <> 
+        <button onClick={() => this.Soma()}>Soma</button>
+        <button onClick={() => this.Subtracao()}>Subtração</button>
+        <button onClick={() => this.Divisao()}>Divisão</button>
+        <button onClick={() => this.Multiplicacao()}>Multiplicação</button>
+      </>
+    );
+  }
+}
+
+ReactDOM.render(<App nome="Fulano"/>, document.getElementById("root"));
